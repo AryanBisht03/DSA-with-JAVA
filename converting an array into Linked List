@@ -30,6 +30,19 @@ private static Node converting_array_to_LL(int[] arr,int n)
 	}
 	return head;
 }
+
+private static int length_of_linklist(Node head)
+{
+	int count=0;
+	while(head!=null)
+	{
+		head=head.next;
+		count++;
+	}
+	return count;
+}
+
+
 public static void main(String args[])
 {
 	Scanner scanner=new Scanner(System.in);
@@ -47,7 +60,8 @@ public static void main(String args[])
 		System.out.print(arr[i]+" ");
 	}
 	System.out.println();
-	Node current=converting_array_to_LL(arr,n);
+	Node head=converting_array_to_LL(arr,n);
+	Node current=head;
 	System.out.println("The head of the LL is "+current.data);
 	System.out.println("Printing the LL");
 	while(current!=null)
@@ -55,6 +69,9 @@ public static void main(String args[])
 		System.out.print(current.data+"->");
 		current=current.next;
 	}
+	System.out.println();
+	int length=length_of_linklist(head);
+	System.out.println("The length of the link list is "+length);
 }
 	
 }
