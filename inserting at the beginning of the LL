@@ -1,0 +1,65 @@
+package Aryan;
+import java.util.*;
+public class single_LL_insertion_at_beginning {
+class Node
+{
+	int data;
+	Node next;
+	Node(int data)
+	{
+		this.data=data;
+		this.next=null;
+	}
+	
+};
+Node head=null;
+public void creation()
+{
+Scanner scanner =new Scanner(System.in);
+ int data;
+ int n;
+ do
+ {
+	 System.out.println("Enter data");
+	 data=scanner.nextInt();
+	 Node new_node=new Node(data);
+	 if(head==null)
+	 {
+		 head=new_node;
+	 }
+	 else
+	 {
+		 new_node.next=head;
+		 head=new_node;
+	 }
+	 System.out.println("Do you want to add new Node? press 1 else 0 to quit");
+	 n=scanner.nextInt();
+ }while(n==1);
+}
+
+public void traversal()
+{
+	
+	if(head==null)
+	{
+		System.out.println("EMpthy LL");
+	}
+	else
+	{
+		Node temp=head;
+		while(temp!=null)
+		{
+			System.out.println(temp.data);
+			temp=temp.next;
+		}
+	}
+	
+}
+
+public static void main(String args[])
+{
+	single_LL_insertion_at_beginning ll=new single_LL_insertion_at_beginning();
+	ll.creation();
+	ll.traversal();
+}
+}
