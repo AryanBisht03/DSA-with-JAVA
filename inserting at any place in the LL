@@ -1,0 +1,72 @@
+package Aryan;
+import java.util.*;
+public class insertion_at_anyplace {
+class Node
+{
+	int data;
+	Node next;
+	Node(int data)
+	{
+		this.data=data;
+		this.next=null;
+	}
+};
+Node head=null;
+
+void creation()
+{
+	Scanner scanner=new Scanner(System.in);
+	System.out.println("Enter the data");
+	int data;
+	int choice;
+	do
+	{
+		data=scanner.nextInt();
+		Node newnode=new Node(data);
+		int position;
+		System.out.println("Enter position in which you want to enter");
+		position=scanner.nextInt();
+		Node temp=head;
+		if(head==null)
+		{
+			System.out.println("The list is already empty");
+		}
+		else
+		{
+		for(int i=0;i<position-1;i++)
+		{
+			temp=temp.next;
+		}
+		newnode.next=temp.next;
+		temp.next=newnode;
+		}
+		System.out.println("Do you want to continue if yes then press 1 else 0");
+		choice=scanner.nextInt();
+	
+	}while(choice==1);
+}
+
+void traversal()
+{
+	if(head==null)
+	{
+		System.out.println("LL is empty");
+	}
+	else
+	{
+		Node temp=head;
+		while(temp!=null)
+		{
+			System.out.print(temp.data+" ");
+			temp=temp.next;
+		}
+	}
+}
+
+public static void main(String args[])
+{
+	insertion_at_anyplace vv=new insertion_at_anyplace();
+	vv.creation();
+	vv.traversal();
+}
+}
