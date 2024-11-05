@@ -1,0 +1,57 @@
+package aryan;
+import java.util.*;
+public class insertion_at_last {
+class Node
+{
+	int data;
+	Node next;
+	Node(int data)
+	{
+		this.data=data;
+		this.next=null;
+	}
+};
+Node head=null;
+void creation()
+{
+	Scanner scanner=new Scanner(System.in);
+	System.out.println("Enter data");
+	int data;
+	int choice;
+	do {
+		System.out.println("Enter data");
+		data=scanner.nextInt();
+		Node newnode=new Node(data);
+		if(head==null)
+		{
+			head=newnode;
+		}
+		else
+		{
+			Node temp=head;
+			while(temp.next!=null)
+			{
+				temp=temp.next;
+			}
+			temp.next=newnode;
+		}
+		System.out.println("Do you want to add new data if yes then press 1 else press anything");
+		choice=scanner.nextInt();
+	}while(choice==1);	
+}
+void traversal()
+{
+	Node temp=head;
+	while(temp!=null)
+	{
+		System.out.print(temp.data+" ");
+		temp=temp.next;
+	}
+}
+public static void main(String args[])
+{
+	insertion_at_last de=new insertion_at_last();
+	de.creation();
+	de.traversal();
+}
+}
